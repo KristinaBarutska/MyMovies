@@ -1,16 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyMovies.aspx.cs" Inherits="MovieScrapper.Secured.MyMovies" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            Test<br />
-        </div>
-    </form>
-</body>
-</html>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MyMovies.aspx.cs" Inherits="MovieScrapper.Secured.MyMovies" %>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <h2><%: Title %>My Favorite movies!</h2>
+    <h3>To do, to do, tododtodotodotodtodooooooooooo........</h3>
+    
+</asp:Content>
