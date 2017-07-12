@@ -91,3 +91,9 @@ c:\users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScr
 c:\users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\obj\Debug\MovieScrapper.csprojResolveAssemblyReference.cache
 c:\users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\obj\Debug\MovieScrapper.dll
 c:\users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\obj\Debug\MovieScrapper.pdb
+C:\Users\k.barutska\Documents\Visual Studio 2017\Projects\MovieScrapper\MovieScrapper\bin\System.Net.Http.Formatting.dll
+C:\Users\k.barutska\Documents\Visual Studio 2017\Projects\MovieScrapper\MovieScrapper\bin\System.Web.Http.dll
+C:\Users\k.barutska\Documents\Visual Studio 2017\Projects\MovieScrapper\MovieScrapper\bin\System.Web.Http.WebHost.dll
+C:\Users\k.barutska\Documents\Visual Studio 2017\Projects\MovieScrapper\MovieScrapper\bin\System.Net.Http.Formatting.xml
+C:\Users\k.barutska\Documents\Visual Studio 2017\Projects\MovieScrapper\MovieScrapper\bin\System.Web.Http.xml
+C:\Users\k.barutska\Documents\Visual Studio 2017\Projects\MovieScrapper\MovieScrapper\bin\System.Web.Http.WebHost.xml
