@@ -2,8 +2,7 @@
     Inherits="MovieScrapper.Secured.MyMovies" Async="true" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server" >
-    
-    
+    <link href="MovieStyleSheet.css" rel="stylesheet" />
     <p>
         &nbsp;</p>
     <p>
@@ -12,15 +11,14 @@
         <asp:Button ID="SearchButton" runat="server" OnClick="Button1_Click" Text="Search" />
     </p>
     <p>
-        <asp:DataList ID="MoviesDataList" runat="server" CellPadding="4" ForeColor="#333333" RepeatColumns="3" RepeatDirection="Horizontal" RepeatLayout="Flow">
-            <AlternatingItemStyle BackColor="White" />
-            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-            <ItemStyle BackColor="#E3EAEB" />
+        <asp:DataList ID="MoviesDataList" runat="server" RepeatColumns="3" RepeatDirection="Horizontal" RepeatLayout="Flow" OnSelectedIndexChanged="MoviesDataList_SelectedIndexChanged">
             <ItemTemplate>
-                 <%# Eval("Title") %>  (<%# Eval("ReleaseDate") %>)
+              <div id="movieItem">  
+                  <div id="title"><%# Eval("Title") %> (<%# DisplayYear((string)Eval("ReleaseDate")) %>)</div>  
+                  <img id="poster" src=<%# BuildUrl((string)Eval("PosterPath")) %> />                                 
+                  <a runat="server" href=<%# BuildUrlWithId((string)Eval("Id")) %>>Details</a>
+              </div>
             </ItemTemplate>
-            <SelectedItemStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
         </asp:DataList>
     </p>
     

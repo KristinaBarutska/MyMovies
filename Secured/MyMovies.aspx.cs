@@ -1,11 +1,8 @@
 ﻿using MovieScrapper.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Globalization;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace MovieScrapper.Secured
 {
@@ -45,6 +42,28 @@ namespace MovieScrapper.Secured
             {
                 Label1.Text = movie1.Title;
             }*/
+        }
+
+        protected string BuildUrl(string path)
+        {
+            return "http://image.tmdb.org/t/p/w92" + path;         
+        }
+
+        protected int DisplayYear(string dateString)
+        {
+            return DateTime.Parse(dateString, new CultureInfo("en-US", true)).Year;
+
+        }
+
+        protected string BuildUrlWithId(string id)
+        {
+            return "~/MovieDetails.aspx?id=" + id;
+
+        }
+
+        protected void MoviesDataList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+             
         }
     }
 }
