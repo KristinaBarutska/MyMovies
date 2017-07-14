@@ -9,9 +9,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <p>
-            Movie details:
-        </p>     
         
         <asp:DetailsView ID="DetailsView1" runat="server" Height="85px" 
             OnPageIndexChanging="DetailsView1_PageIndexChanging" Width="255px"
@@ -20,11 +17,12 @@
             <asp:TemplateField>
                 <ItemTemplate>
                   <div id="movieItem"> 
-                    <div id="title">
-                        <%# Eval("Title") %>(<%# DisplayYear((string)Eval("ReleaseDate")) %>) 
+                    <div id="info">
+                            <div id="title"><%# Eval("Title") %> (<%# DisplayYear((string)Eval("ReleaseDate")) %>)</div>
                         </br>
+                        <div id="overview"><%# Eval("Overview") %></div>
                         </br>
-                        <%# Eval("Overview") %>
+                        <a id="backlLink" runat="server" href="<%# BuildBackUrl() %>">Back to search page</a>
                     </div>
                     <img id="poster" src="<%# BuildUrl((string)Eval("PosterPath")) %> "/>
                    </div>

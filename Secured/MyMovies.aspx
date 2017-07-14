@@ -14,9 +14,13 @@
         <asp:DataList ID="MoviesDataList" runat="server" RepeatColumns="3" RepeatDirection="Horizontal" RepeatLayout="Flow" OnSelectedIndexChanged="MoviesDataList_SelectedIndexChanged">
             <ItemTemplate>
               <div id="movieItem">  
-                  <div id="title"><%# Eval("Title") %> (<%# DisplayYear((string)Eval("ReleaseDate")) %>)</div>  
+                  <div id="title">
+                      <%# Eval("Title") %> (<%# DisplayYear((string)Eval("ReleaseDate")) %>)
+                      </br>
+                      <a id="buildUrlWithId" runat="server" href=<%# BuildUrlWithId((string)Eval("Id")) %>>Details</a>
+                  </div>  
                   <img id="poster" src=<%# BuildUrl((string)Eval("PosterPath")) %> />                                 
-                  <a runat="server" href=<%# BuildUrlWithId((string)Eval("Id")) %>>Details</a>
+                  
               </div>
             </ItemTemplate>
         </asp:DataList>

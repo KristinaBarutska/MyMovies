@@ -10,7 +10,14 @@ namespace MovieScrapper.Secured
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            var name = Request.QueryString["name"];
+            if (!string.IsNullOrEmpty(name))
+            {
+              
+                TextBox1.Text = name;
+                RegisterAsyncTask(new PageAsyncTask(LoadMoviesAsync));
+            }
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -50,15 +57,22 @@ namespace MovieScrapper.Secured
              return "http://image.tmdb.org/t/p/w92" + path;       
         }
 
-        protected int DisplayYear(string dateString)
+        protected string DisplayYear(string dateString)
         {
-            return DateTime.Parse(dateString, new CultureInfo("en-US", true)).Year;
+            try
+            {
+                return DateTime.Parse(dateString, new CultureInfo("en-US", true)).Year.ToString();
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
 
         }
 
         protected string BuildUrlWithId(string id)
         {
-            return "~/MovieDetails.aspx?id=" + id;
+            return "~/MovieDetails.aspx?id=" + id + "&back=Secured/MyMovies?name=" + TextBox1.Text;
 
         }
 
