@@ -12,7 +12,7 @@ namespace MovieScrapper.Secured
         {
 
         }
-        
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             RegisterAsyncTask(new PageAsyncTask(LoadMoviesAsync));
@@ -46,7 +46,8 @@ namespace MovieScrapper.Secured
 
         protected string BuildUrl(string path)
         {
-            return "http://image.tmdb.org/t/p/w92" + path;         
+            
+             return "http://image.tmdb.org/t/p/w92" + path;       
         }
 
         protected int DisplayYear(string dateString)
@@ -63,7 +64,7 @@ namespace MovieScrapper.Secured
 
         protected void MoviesDataList_SelectedIndexChanged(object sender, EventArgs e)
         {
-             
+
         }
     }
 }
