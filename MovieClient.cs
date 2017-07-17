@@ -53,7 +53,11 @@ namespace MovieScrapper
                 var movies = await response.Content.ReadAsAsync<MoviesCollection>();
                 return movies;
             }
-            return null;
+            else
+            {
+                throw new System.ArgumentNullException("Please enter a title!");
+                
+            }
         }
 
     }

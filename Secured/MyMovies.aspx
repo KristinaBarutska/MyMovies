@@ -2,13 +2,16 @@
     Inherits="MovieScrapper.Secured.MyMovies" Async="true" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server" >
+
     <link href="MovieStyleSheet.css" rel="stylesheet" />
+    <p>&nbsp;</p>
     <p>
-        &nbsp;</p>
-    <p>
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-&nbsp;&nbsp;
-        <asp:Button ID="SearchButton" runat="server" OnClick="Button1_Click" Text="Search" />
+        <asp:Panel runat="server" DefaultButton="SearchButton">
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            &nbsp;&nbsp;
+            <asp:Button ID="SearchButton" runat="server" OnClick="Button1_Click" Text="Search" />   
+            &nbsp;<br />   
+        </asp:Panel>
     </p>
     <p>
         <asp:DataList ID="MoviesDataList" runat="server" RepeatColumns="3" RepeatDirection="Horizontal" RepeatLayout="Flow" OnSelectedIndexChanged="MoviesDataList_SelectedIndexChanged">
@@ -16,6 +19,7 @@
               <div id="movieItem">  
                   <div id="title">
                       <%# Eval("Title") %> (<%# DisplayYear((string)Eval("ReleaseDate")) %>)
+                      <br>
                       </br>
                       <a id="buildUrlWithId" runat="server" href=<%# BuildUrlWithId((string)Eval("Id")) %>>Details</a>
                   </div>  
@@ -25,6 +29,5 @@
             </ItemTemplate>
         </asp:DataList>
     </p>
-    
-    
+       
 </asp:Content>

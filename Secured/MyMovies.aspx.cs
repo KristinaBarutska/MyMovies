@@ -2,6 +2,7 @@
 using System;
 using System.Globalization;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.UI;
 
 namespace MovieScrapper.Secured
@@ -10,18 +11,29 @@ namespace MovieScrapper.Secured
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var name = Request.QueryString["name"];
-            if (!string.IsNullOrEmpty(name))
+
+            //if (!Page.IsPostBack)
+            //{
+
+            //}
+
+            TextBox1.Focus();
+            if (HttpContext.Current.Request.HttpMethod == "GET")
             {
-              
-                TextBox1.Text = name;
-                RegisterAsyncTask(new PageAsyncTask(LoadMoviesAsync));
+                var name = Request.QueryString["name"];
+                    if (!string.IsNullOrEmpty(name))
+                    {
+                        TextBox1.Text = name;
+                        RegisterAsyncTask(new PageAsyncTask(LoadMoviesAsync));
+                    }
             }
             
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            //Response.Redirect();
+
             RegisterAsyncTask(new PageAsyncTask(LoadMoviesAsync));
         }
 
@@ -30,25 +42,17 @@ namespace MovieScrapper.Secured
             var environmentKey = Environment.GetEnvironmentVariable("TMDB_API_KEY");
             var movieClient = new MovieClient(environmentKey);
             var searchedMovie = TextBox1.Text;
-            var movies = await movieClient.SearchMovieAsync(searchedMovie);
-            MoviesDataList.DataSource = movies.Results;
-            MoviesDataList.DataBind();
-
-            /*foreach (var movie in movies.Results)
+            try
             {
-                Label1.Text = movie.Title;
-            }*/
-
-            /*var id = TextBox1.Text;
-            var movie1 = await movieClient.GetMovieAsync(id);
-            if (movie1 == null)
-            {
-                Label1.Text = "There is not a movie with this Id.";
+                var movies = await movieClient.SearchMovieAsync(searchedMovie);
+                MoviesDataList.DataSource = movies.Results;
+                MoviesDataList.DataBind();
             }
-            else
+            catch (System.ArgumentNullException)
             {
-                Label1.Text = movie1.Title;
-            }*/
+                TextBox1.Text = "Please enter a title";
+            }
+
         }
 
         protected string BuildUrl(string path)
@@ -59,6 +63,12 @@ namespace MovieScrapper.Secured
 
         protected string DisplayYear(string dateString)
         {
+            //DateTime res;
+            //if (DateTime.TryParseExact(dateString, "yyyy-MM-dd", ))
+            //{
+                
+            //}
+
             try
             {
                 return DateTime.Parse(dateString, new CultureInfo("en-US", true)).Year.ToString();
