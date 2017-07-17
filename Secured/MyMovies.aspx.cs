@@ -12,27 +12,31 @@ namespace MovieScrapper.Secured
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            //if (!Page.IsPostBack)
-            //{
-
-            //}
-
             TextBox1.Focus();
-            if (HttpContext.Current.Request.HttpMethod == "GET")
+
+            if (!Page.IsPostBack)
             {
                 var name = Request.QueryString["name"];
-                    if (!string.IsNullOrEmpty(name))
+                if (name != null)
+                {
+                    if (name != String.Empty)
                     {
                         TextBox1.Text = name;
                         RegisterAsyncTask(new PageAsyncTask(LoadMoviesAsync));
                     }
+
+                    else
+                    {
+                        TextBox1.Text = "Please enter a title";
+                    }
+                }
             }
-            
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //Response.Redirect();
+            Response.Redirect(BuildUrlWithName(TextBox1.Text));
 
             RegisterAsyncTask(new PageAsyncTask(LoadMoviesAsync));
         }
@@ -44,45 +48,49 @@ namespace MovieScrapper.Secured
             var searchedMovie = TextBox1.Text;
             try
             {
-                var movies = await movieClient.SearchMovieAsync(searchedMovie);
-                MoviesDataList.DataSource = movies.Results;
-                MoviesDataList.DataBind();
+
+                    var movies = await movieClient.SearchMovieAsync(searchedMovie);
+                    MoviesDataList.DataSource = movies.Results;
+                    MoviesDataList.DataBind();
+
             }
-            catch (System.ArgumentNullException)
+            catch (Exception e)
             {
-                TextBox1.Text = "Please enter a title";
+                TextBox1.Text = e.Message;
             }
 
         }
 
         protected string BuildUrl(string path)
         {
-            
-             return "http://image.tmdb.org/t/p/w92" + path;       
+
+            return "http://image.tmdb.org/t/p/w92" + path;
         }
 
-        protected string DisplayYear(string dateString)
+        protected string BuildUrlWithName(string name)
         {
-            //DateTime res;
-            //if (DateTime.TryParseExact(dateString, "yyyy-MM-dd", ))
-            //{
-                
-            //}
-
-            try
-            {
-                return DateTime.Parse(dateString, new CultureInfo("en-US", true)).Year.ToString();
-            }
-            catch (Exception e)
-            {
-                return null;
-            }
+            return "MyMovies?name=" + name;
 
         }
 
         protected string BuildUrlWithId(string id)
         {
             return "~/MovieDetails.aspx?id=" + id + "&back=Secured/MyMovies?name=" + TextBox1.Text;
+
+        }
+
+        protected string DisplayYear(string dateString)
+        {
+            DateTime res;
+
+            if (DateTime.TryParse(dateString, out res))
+            {
+                return res.Year.ToString();
+            }
+            else
+            {
+                return dateString;
+            }
 
         }
 

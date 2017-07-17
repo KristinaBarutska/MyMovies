@@ -55,8 +55,7 @@ namespace MovieScrapper
             }
             else
             {
-                throw new System.ArgumentNullException("Please enter a title!");
-                
+                throw new Exception("Something bad happened!");                             
             }
         }
 
