@@ -1,8 +1,5 @@
-﻿using MovieScrapper.Models;
-using System;
-using System.Globalization;
+﻿using System;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.UI;
 
 namespace MovieScrapper.Secured
