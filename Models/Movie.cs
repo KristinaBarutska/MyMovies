@@ -15,5 +15,7 @@ namespace MovieScrapper.Models
         public string PosterPath { get; set; }
         public string Overview { get; set; }
 
+        public MovieCategory Catrgory { get; set; }
+
     }
 }

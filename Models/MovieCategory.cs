@@ -7,7 +7,7 @@ namespace MovieScrapper.Models
 {
     public class MovieCategory
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string CategoryTtle { get; set; }
         public string CategoryDescription { get; set; }
 

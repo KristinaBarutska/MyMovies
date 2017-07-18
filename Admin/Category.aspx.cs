@@ -1,10 +1,5 @@
 ﻿using MovieScrapper.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace MovieScrapper.Admin
 {
@@ -12,14 +7,35 @@ namespace MovieScrapper.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        protected void CategoryTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void SubmitCategoryButton_Click(object sender, EventArgs e)
+        {
+            AddCategory();
+                    
+        }
+
+        private void AddCategory()
+        {          
+            var catrgoryTitle = CategoryTextBox.Text;
+            var catrgoryDescription = DescriptionTextBox.Text;
             using (var ctx = new MovieContext())
             {
-                MovieCategory category = new MovieCategory() { Id = "2", CategoryTtle = "Fantasy", CategoryDescription = "Test2" };
 
-                ctx.MovieCatergries.Add(category);
-                ctx.SaveChanges();
-                TextBox1.Text = category.CategoryTtle;
+                MovieCategory category = new MovieCategory() { CategoryTtle = catrgoryTitle, CategoryDescription = catrgoryDescription };
+                
+                    ctx.MovieCatergries.Add(category);
+                    ctx.SaveChanges();
+                    Label1.Text = category.CategoryTtle + " added";                               
+
             }
+
         }
     }
 }

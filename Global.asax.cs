@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Optimization;
 using System.Web.Routing;
-using System.Web.Security;
-using System.Web.SessionState;
 using System.Web.Http;
+using System.Data.Entity;
+using MovieScrapper.Models;
 
 namespace MovieScrapper
 {
@@ -24,6 +22,7 @@ namespace MovieScrapper
                 defaults: new { id = System.Web.Http.RouteParameter.Optional }
             );
 
+            Database.SetInitializer<MovieContext>(new DropCreateDatabaseIfModelChanges<MovieContext>());
         }
     }
 }

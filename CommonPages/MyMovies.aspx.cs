@@ -72,7 +72,7 @@ namespace MovieScrapper.Secured
 
         protected string BuildUrlWithId(string id)
         {
-            return "~/MovieDetails.aspx?id=" + id + "&back=Secured/MyMovies?name=" + TextBox1.Text;
+            return "MovieDetails.aspx?id=" + id + "&back=MyMovies?name=" + TextBox1.Text;
 
         }
 

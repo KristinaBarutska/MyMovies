@@ -9,8 +9,15 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        </div>
+            <asp:TextBox ID="CategoryTextBox" runat="server" OnTextChanged="CategoryTextBox_TextChanged"></asp:TextBox>
+        &nbsp;</div>
+        <p>
+            <asp:TextBox ID="DescriptionTextBox" runat="server" Height="147px" Width="397px"></asp:TextBox>
+        </p>
+        <asp:Button ID="SubmitCategoryButton" runat="server" OnClick="SubmitCategoryButton_Click" Text="Submit" />
+        <p>
+            <asp:Label ID="Label1" runat="server"></asp:Label>
+        </p>
     </form>
 </body>
 </html>
