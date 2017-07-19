@@ -69,7 +69,14 @@ namespace MovieScrapper
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (HttpContext.Current.User.IsInRole("admin"))
+            {
+                Admin.Visible = true;
+            }
+            else
+            {
+                Admin.Visible = false;
+            }
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

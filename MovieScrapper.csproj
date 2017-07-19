@@ -199,7 +199,9 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="Admin\Category.aspx" />
+    <Content Include="Admin\AddCategory.aspx" />
+    <Content Include="Admin\EditCategory.aspx" />
+    <Content Include="Admin\GetCategory.aspx" />
     <Content Include="Admin\Users.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -250,11 +252,11 @@
     <Content Include="CommonPages\MovieStyleSheet.css" />
     <Content Include="CommonPages\MyMovies.aspx" />
     <Content Include="Site.Master" />
+    <Content Include="SiteMaster.css" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
-    <Content Include="CommonPages\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\AddPhoneNumber.aspx.cs">
@@ -362,12 +364,26 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Category.aspx.cs">
-      <DependentUpon>Category.aspx</DependentUpon>
+    <Compile Include="Admin\AddCategory.aspx.cs">
+      <DependentUpon>AddCategory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Category.aspx.designer.cs">
-      <DependentUpon>Category.aspx</DependentUpon>
+    <Compile Include="Admin\AddCategory.aspx.designer.cs">
+      <DependentUpon>AddCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditCategory.aspx.cs">
+      <DependentUpon>EditCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditCategory.aspx.designer.cs">
+      <DependentUpon>EditCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GetCategory.aspx.cs">
+      <DependentUpon>GetCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GetCategory.aspx.designer.cs">
+      <DependentUpon>GetCategory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Users.aspx.cs">
       <DependentUpon>Users.aspx</DependentUpon>
@@ -440,6 +456,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Secured\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

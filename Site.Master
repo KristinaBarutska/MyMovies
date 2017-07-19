@@ -14,6 +14,8 @@
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
+    <link href="SiteMaster.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
     <form runat="server">
@@ -51,7 +53,8 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/CommonPages/MyMovies">My movies</a></li>
+                        <li><a runat="server" href="~/CommonPages/MyMovies">Search movies</a></li>
+                        <li><a runat="server" id="Admin" href="~/Admin/GetCategory">Admin</a></li>
                     
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">

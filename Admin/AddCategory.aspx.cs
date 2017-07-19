@@ -37,5 +37,10 @@ namespace MovieScrapper.Admin
             }
 
         }
+
+        protected void BackToShowCategoriesButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("GetCategory.aspx");
+        }
     }
 }
