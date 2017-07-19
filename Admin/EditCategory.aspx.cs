@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MovieScrapper.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,8 +12,25 @@ namespace MovieScrapper.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var id = Request.QueryString["id"];
+            int id = Int32.Parse(Request.QueryString["id"]);
+            
+            using (var ctx = new MovieContext())
+            {
+                MovieCategory category = ctx.MovieCatergries.Where(x => x.Id == id).FirstOrDefault();
+                EditCategoryTitleTextBox.Text = category.CategoryTtle;
+                EditCategoryDescriptionTextBox.Text = category.CategoryDescription;
+            }
+            
+        }
 
+        protected void SaveChangesButton_Click(object sender, EventArgs e)
+        {
+            using (var ctx = new MovieContext())
+            {
+                MovieCategory category = new MovieCategory { CategoryTtle = EditCategoryTitleTextBox.Text, CategoryDescription = EditCategoryDescriptionTextBox.Text };
+                ctx.MovieCatergries.Add(category);
+                ctx.SaveChanges();
+            }
         }
     }
 }

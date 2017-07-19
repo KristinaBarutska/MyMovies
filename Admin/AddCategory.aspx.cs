@@ -1,5 +1,6 @@
 ﻿using MovieScrapper.Models;
 using System;
+using System.Linq;
 
 namespace MovieScrapper.Admin
 {
@@ -27,7 +28,6 @@ namespace MovieScrapper.Admin
             var catrgoryDescription = DescriptionTextBox.Text;
             using (var ctx = new MovieContext())
             {
-
                 MovieCategory category = new MovieCategory() { CategoryTtle = catrgoryTitle, CategoryDescription = catrgoryDescription };
                 
                     ctx.MovieCatergries.Add(category);
