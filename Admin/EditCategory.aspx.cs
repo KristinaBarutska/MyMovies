@@ -33,11 +33,24 @@ namespace MovieScrapper.Admin
                 MovieCategory category = ctx.MovieCatergries.Where(x => x.Id == id).FirstOrDefault();
                 category.CategoryTtle = EditCategoryTitleTextBox.Text;
                 category.CategoryDescription = EditCategoryDescriptionTextBox.Text;
-                //category.CategoryDescription = "Test";
                 ctx.Entry(category).State = System.Data.Entity.EntityState.Modified;               
                 ctx.SaveChanges();
             }
             Response.Redirect("GetCategory.aspx");
         }
+
+        protected void DeleteCategoryButton_Click(object sender, EventArgs e)
+        {
+            int id = Int32.Parse(Request.QueryString["id"]);
+            using (var ctx = new MovieContext())
+            {
+                MovieCategory category = ctx.MovieCatergries.Where(x => x.Id == id).FirstOrDefault();
+                
+                ctx.Entry(category).State = System.Data.Entity.EntityState.Deleted;
+                ctx.SaveChanges();
+            }
+            Response.Redirect("GetCategory.aspx");
+        }
+       
     }
 }

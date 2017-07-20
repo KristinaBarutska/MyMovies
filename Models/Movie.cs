@@ -3,6 +3,8 @@ using System;
 
 namespace MovieScrapper.Models
 {
+    [JsonObject]
+    [Serializable]
     public class Movie
     {
         public string Id { get; set; }
@@ -14,8 +16,6 @@ namespace MovieScrapper.Models
         [JsonProperty("poster_path")]
         public string PosterPath { get; set; }
         public string Overview { get; set; }
-
-        public MovieCategory Catrgory { get; set; }
 
     }
 }

@@ -66,13 +66,30 @@ namespace MovieScrapper.Secured
 
         protected string BuildUrlWithName(string name)
         {
-            return "MyMovies?name=" + name;
-
+            var categoryId = Request.QueryString["categoryId"];
+            if (categoryId != null)
+            {
+                return "MyMovies?name=" + name + "&categoryId=" + categoryId;
+            }
+            else
+            {
+                return "MyMovies?name=" + name;
+            }
         }
 
         protected string BuildUrlWithId(string id)
         {
-            return "MovieDetails.aspx?id=" + id + "&back=MyMovies?name=" + TextBox1.Text;
+            var categoryId = Request.QueryString["categoryId"];
+            if (categoryId != null)
+            {
+                string encodedBackUrl = Server.UrlEncode("MyMovies?name=" + TextBox1.Text + "&categoryId=" + categoryId);
+                return "MovieDetails.aspx?id=" + id + "&categoryId=" + categoryId + "&back=" + encodedBackUrl;
+            }
+            else
+            {
+                return "MovieDetails.aspx?id=" + id + "&back=MyMovies?name=" + Server.UrlEncode(TextBox1.Text);
+            }
+
 
         }
 

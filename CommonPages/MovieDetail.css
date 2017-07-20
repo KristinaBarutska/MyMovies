@@ -1,6 +1,6 @@
 ﻿#movieItem {
     width: 500px;
-    height: 290px;
+    height: 500px;
     align-items: center;
     justify-content: center;
     display: inline-flex;
@@ -28,5 +28,9 @@
 }
 
 #backlLink{
-    text-decoration:wavy;
+    text-decoration:none;
+}
+
+#AddMovieToCategoryButton {
+    background-color:aquamarine;
 }
