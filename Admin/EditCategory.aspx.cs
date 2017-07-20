@@ -12,25 +12,32 @@ namespace MovieScrapper.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int id = Int32.Parse(Request.QueryString["id"]);
-            
-            using (var ctx = new MovieContext())
+            if (!IsPostBack)
             {
-                MovieCategory category = ctx.MovieCatergries.Where(x => x.Id == id).FirstOrDefault();
-                EditCategoryTitleTextBox.Text = category.CategoryTtle;
-                EditCategoryDescriptionTextBox.Text = category.CategoryDescription;
+                int id = Int32.Parse(Request.QueryString["id"]);
+                using (var ctx = new MovieContext())
+                {
+                    MovieCategory category = ctx.MovieCatergries.Where(x => x.Id == id).FirstOrDefault();
+                    EditCategoryTitleTextBox.Text = category.CategoryTtle;
+                    EditCategoryDescriptionTextBox.Text = category.CategoryDescription;
+                }
             }
-            
         }
 
         protected void SaveChangesButton_Click(object sender, EventArgs e)
         {
+
+            int id = Int32.Parse(Request.QueryString["id"]);
             using (var ctx = new MovieContext())
             {
-                MovieCategory category = new MovieCategory { CategoryTtle = EditCategoryTitleTextBox.Text, CategoryDescription = EditCategoryDescriptionTextBox.Text };
-                ctx.MovieCatergries.Add(category);
+                MovieCategory category = ctx.MovieCatergries.Where(x => x.Id == id).FirstOrDefault();
+                category.CategoryTtle = EditCategoryTitleTextBox.Text;
+                category.CategoryDescription = EditCategoryDescriptionTextBox.Text;
+                //category.CategoryDescription = "Test";
+                ctx.Entry(category).State = System.Data.Entity.EntityState.Modified;               
                 ctx.SaveChanges();
             }
+            Response.Redirect("GetCategory.aspx");
         }
     }
 }

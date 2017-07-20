@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
         <div>
             <asp:TextBox ID="EditCategoryTitleTextBox" runat="server" Width="400px"></asp:TextBox>
-            <br />
+            <br /><br />
         </div>
         <asp:TextBox ID="EditCategoryDescriptionTextBox" runat="server" Height="50px" Width="400px"></asp:TextBox>
         <p>
