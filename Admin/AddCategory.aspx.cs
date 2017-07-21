@@ -30,7 +30,7 @@ namespace MovieScrapper.Admin
             {
                 MovieCategory category = new MovieCategory() { CategoryTtle = catrgoryTitle, CategoryDescription = catrgoryDescription };
                 
-                    ctx.MovieCatergries.Add(category);
+                    ctx.MovieCaterogries.Add(category);
                     ctx.SaveChanges();
                     Label1.Text = category.CategoryTtle + " added";                               
 

@@ -17,7 +17,8 @@ namespace MovieScrapper.Admin
                 int id = Int32.Parse(Request.QueryString["id"]);
                 using (var ctx = new MovieContext())
                 {
-                    MovieCategory category = ctx.MovieCatergries.Where(x => x.Id == id).FirstOrDefault();
+                    //MovieCategory category = ctx.MovieCaterogries.Where(x => x.Id == id).FirstOrDefault();
+                    MovieCategory category = ctx.MovieCaterogries.FirstOrDefault(c => c.Id == id);
                     EditCategoryTitleTextBox.Text = category.CategoryTtle;
                     EditCategoryDescriptionTextBox.Text = category.CategoryDescription;
                 }
@@ -30,7 +31,7 @@ namespace MovieScrapper.Admin
             int id = Int32.Parse(Request.QueryString["id"]);
             using (var ctx = new MovieContext())
             {
-                MovieCategory category = ctx.MovieCatergries.Where(x => x.Id == id).FirstOrDefault();
+                MovieCategory category = ctx.MovieCaterogries.Where(x => x.Id == id).FirstOrDefault();
                 category.CategoryTtle = EditCategoryTitleTextBox.Text;
                 category.CategoryDescription = EditCategoryDescriptionTextBox.Text;
                 ctx.Entry(category).State = System.Data.Entity.EntityState.Modified;               
@@ -44,7 +45,7 @@ namespace MovieScrapper.Admin
             int id = Int32.Parse(Request.QueryString["id"]);
             using (var ctx = new MovieContext())
             {
-                MovieCategory category = ctx.MovieCatergries.Where(x => x.Id == id).FirstOrDefault();
+                MovieCategory category = ctx.MovieCaterogries.Where(x => x.Id == id).FirstOrDefault();
                 
                 ctx.Entry(category).State = System.Data.Entity.EntityState.Deleted;
                 ctx.SaveChanges();

@@ -10,6 +10,6 @@ namespace MovieScrapper.Models
         }
 
         public DbSet<Movie> Movies { get; set; }
-        public DbSet<MovieCategory> MovieCatergries { get; set; }
+        public DbSet<MovieCategory> MovieCaterogries { get; set; }
     }
 }

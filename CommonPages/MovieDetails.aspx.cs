@@ -54,9 +54,18 @@ namespace MovieScrapper
             return backUrl;
         }
 
-        protected int DisplayYear(string dateString)
+        protected string DisplayYear(string dateString)
         {
-            return DateTime.Parse(dateString, new CultureInfo("en-US", true)).Year;
+            DateTime res;
+
+            if (DateTime.TryParse(dateString, out res))
+            {
+                return res.Year.ToString();
+            }
+            else
+            {
+                return dateString;
+            }
         }
 
         protected void DetailsView1_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
@@ -69,31 +78,67 @@ namespace MovieScrapper
             var movie = ViewState["Movie"] as Movie;
             if (movie != null)
             {
-                var categoryId = Request.QueryString["categoryId"];
+                var categoryId = Int32.Parse(Request.QueryString["categoryId"]);
                 var movieId = Request.QueryString["id"];
 
                 using (var ctx = new MovieContext())
                 {
                     var databaseMovie = ctx.Movies.Find(movie.Id);
+                    var databaseCategory = ctx.MovieCaterogries.Include("Movies").SingleOrDefault(x => x.Id == categoryId);
+                    var categoryTitle = databaseCategory.CategoryTtle;
+
+
+                    var foundedMovie = databaseCategory.Movies.FirstOrDefault(x => x.Id == movieId);
+
+                    //var IsMovieFound = ctx.MovieCaterogries.Any(cat => cat.Id == categoryId && cat.Movies.Any(m => m.Id == movieId));
+
+
+                    //var foundedMovie = ctx.MovieCaterogries.SelectMany(c => c.Movies).ToList().Find(m => m.Id == movieId);
+                    //Insert movie in the local DB
                     if (databaseMovie != null)
                     {
-                        databaseMovie = movie;
-                        ctx.Entry(databaseMovie).State = System.Data.Entity.EntityState.Modified;
-                        ctx.SaveChanges();
+                        //databaseMovie = movie;
+                        //ctx.Entry(databaseMovie).State = System.Data.Entity.EntityState.Modified;
+                        //ctx.SaveChanges();
+                        Label1.Text = "This movie is already in the DB";
                     }
 
                     else
                     {
-                        ctx.Movies.Add(movie);
+                        databaseMovie = ctx.Movies.Add(movie);
                         ctx.SaveChanges();
-                    }
-                    
+                        Label1.Text = "The movie " + movie.Title + " was added in the DB";
 
-                    //Label1.Text = movie.Title;
-                   
+                    }
+
+                    if (foundedMovie!=null)
+                    {
+
+                       Label2.Text = "This movie is already in the category " + categoryTitle;
+                    }
+
+                    else
+                    {
+                        databaseCategory.Movies.Add(databaseMovie);
+                        //foundedMovie.MovieCategories.Add(databaseCategory);
+                        //ctx.Entry(databaseCategory).State = System.Data.Entity.EntityState.Modified;
+                        ctx.SaveChanges();
+                        Label2.Text = "The movie " + movie.Title + " was added in category " + categoryTitle;
+                    }
 
                 }
             }          
+
+        }
+
+        protected string ShowCategoryTitle()
+        {
+            var categoryId = Int32.Parse(Request.QueryString["categoryId"]);
+            using (var ctx = new MovieContext())
+            {
+                var databaseCategory = ctx.MovieCaterogries.Find(categoryId);
+                return databaseCategory.CategoryTtle;
+            }
 
         }
     }
