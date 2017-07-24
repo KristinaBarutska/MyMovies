@@ -54,7 +54,7 @@ namespace MovieScrapper.Admin
             if (e.CommandName == "ShowMoviesInThisCategory")
             {
                 var id = e.CommandArgument;
-                Response.Redirect("/CommonPages/MyMovies.aspx");
+                Response.Redirect("/CommonPages/ShowMoviesInCategory.aspx?categoryId=" + id.ToString());
             }
         }
 

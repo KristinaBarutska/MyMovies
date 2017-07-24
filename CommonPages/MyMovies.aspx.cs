@@ -14,6 +14,7 @@ namespace MovieScrapper.Secured
             if (!Page.IsPostBack)
             {
                 var name = Request.QueryString["name"];
+                var categoryId = Request.QueryString["categoryId"];
                 if (name != null)
                 {
                     if (name != String.Empty)
@@ -27,6 +28,7 @@ namespace MovieScrapper.Secured
                         TextBox1.Text = "Please enter a title";
                     }
                 }
+                                
             }
 
         }
@@ -55,6 +57,7 @@ namespace MovieScrapper.Secured
             {
                 TextBox1.Text = e.Message;
             }
+            
 
         }
 
