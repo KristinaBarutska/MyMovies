@@ -31,12 +31,6 @@ namespace MovieScrapper.Admin
 
         }
 
-        protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-     
-
         protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
         {
             if (e.CommandName == "EditCategory")
@@ -44,17 +38,11 @@ namespace MovieScrapper.Admin
                 var id = e.CommandArgument;
                 Response.Redirect("EditCategory.aspx?id=" + id.ToString());
             }
-
-            if (e.CommandName == "EditMoviesList")
+            
+            if (e.CommandName == "EditMoviesInThisCategory")
             {
                 var id = e.CommandArgument;
-                Response.Redirect("/CommonPages/MyMovies.aspx?categoryId=" + id.ToString());
-            }
-
-            if (e.CommandName == "ShowMoviesInThisCategory")
-            {
-                var id = e.CommandArgument;
-                Response.Redirect("/CommonPages/ShowMoviesInCategory.aspx?categoryId=" + id.ToString());
+                Response.Redirect("EditMoviesInThisCategory.aspx?categoryId=" + id.ToString());
             }
         }
 

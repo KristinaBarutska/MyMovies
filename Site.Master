@@ -47,13 +47,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">Movies</a>
+                    </button>                  
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/CommonPages/MyMovies">Search movies</a></li>
+                        
+                        <li><a runat="server" href="~/CommonPages/ShowMovies">Home</a></li>
+                        <li><a runat="server" href="~/CommonPages/ShowCategories">Categories</a></li>
                         <li><a runat="server" id="Admin" href="~/Admin/GetCategory">Admin</a></li>
                     
                     </ul>

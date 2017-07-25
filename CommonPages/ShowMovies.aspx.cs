@@ -72,11 +72,11 @@ namespace MovieScrapper.Secured
             var categoryId = Request.QueryString["categoryId"];
             if (categoryId != null)
             {
-                return "MyMovies?name=" + name + "&categoryId=" + categoryId;
+                return "ShowMovies?name=" + name + "&categoryId=" + categoryId;
             }
             else
             {
-                return "MyMovies?name=" + name;
+                return "ShowMovies?name=" + name;
             }
         }
 
@@ -85,12 +85,12 @@ namespace MovieScrapper.Secured
             var categoryId = Request.QueryString["categoryId"];
             if (categoryId != null)
             {
-                string encodedBackUrl = Server.UrlEncode("MyMovies?name=" + TextBox1.Text + "&categoryId=" + categoryId);
+                string encodedBackUrl = Server.UrlEncode("ShowMovies?name=" + TextBox1.Text + "&categoryId=" + categoryId);
                 return "MovieDetails.aspx?id=" + id + "&categoryId=" + categoryId + "&back=" + encodedBackUrl;
             }
             else
             {
-                return "MovieDetails.aspx?id=" + id + "&back=MyMovies?name=" + Server.UrlEncode(TextBox1.Text);
+                return "MovieDetails.aspx?id=" + id + "&back=ShowMovies?name=" + Server.UrlEncode(TextBox1.Text);
             }
 
 

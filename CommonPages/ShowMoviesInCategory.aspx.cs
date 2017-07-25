@@ -76,11 +76,11 @@ namespace MovieScrapper.CommonPages
             var categoryId = Request.QueryString["categoryId"];
             if (categoryId != null)
             {
-                return "MyMovies?name=" + name + "&categoryId=" + categoryId;
+                return "ShowMovies?name=" + name + "&categoryId=" + categoryId;
             }
             else
             {
-                return "MyMovies?name=" + name;
+                return "ShowMovies?name=" + name;
             }
         }
 

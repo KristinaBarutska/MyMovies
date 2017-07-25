@@ -201,8 +201,11 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Admin\AddCategory.aspx" />
     <Content Include="Admin\EditCategory.aspx" />
+    <Content Include="Admin\EditMoviesInThisCategory.aspx" />
     <Content Include="Admin\GetCategory.aspx" />
     <Content Include="Admin\Users.aspx" />
+    <Content Include="CommonPages\DBMovieDetails.aspx" />
+    <Content Include="CommonPages\ShowCategories.aspx" />
     <Content Include="CommonPages\ShowMoviesInCategory.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -253,7 +256,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="CommonPages\MovieStyleSheet.css" />
-    <Content Include="CommonPages\MyMovies.aspx" />
+    <Content Include="CommonPages\ShowMovies.aspx" />
     <Content Include="Site.Master" />
     <Content Include="SiteMaster.css" />
     <Content Include="ViewSwitcher.ascx" />
@@ -381,6 +384,13 @@
     <Compile Include="Admin\EditCategory.aspx.designer.cs">
       <DependentUpon>EditCategory.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\EditMoviesInThisCategory.aspx.cs">
+      <DependentUpon>EditMoviesInThisCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditMoviesInThisCategory.aspx.designer.cs">
+      <DependentUpon>EditMoviesInThisCategory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\GetCategory.aspx.cs">
       <DependentUpon>GetCategory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -399,6 +409,20 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="CommonPages\DBMovieDetails.aspx.cs">
+      <DependentUpon>DBMovieDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CommonPages\DBMovieDetails.aspx.designer.cs">
+      <DependentUpon>DBMovieDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CommonPages\ShowCategories.aspx.cs">
+      <DependentUpon>ShowCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CommonPages\ShowCategories.aspx.designer.cs">
+      <DependentUpon>ShowCategories.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CommonPages\ShowMoviesInCategory.aspx.cs">
       <DependentUpon>ShowMoviesInCategory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -431,12 +455,12 @@
     </Compile>
     <Compile Include="MoviesLocalDBClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CommonPages\MyMovies.aspx.cs">
-      <DependentUpon>MyMovies.aspx</DependentUpon>
+    <Compile Include="CommonPages\ShowMovies.aspx.cs">
+      <DependentUpon>ShowMovies.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CommonPages\MyMovies.aspx.designer.cs">
-      <DependentUpon>MyMovies.aspx</DependentUpon>
+    <Compile Include="CommonPages\ShowMovies.aspx.designer.cs">
+      <DependentUpon>ShowMovies.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

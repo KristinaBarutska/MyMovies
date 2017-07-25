@@ -18,6 +18,16 @@ namespace MovieScrapper
 
                 return foundedMovies;
             }
-        }      
+        }
+
+        public MovieCategory ShowCategory(int categoryId)
+        {
+            using (var ctx = new MovieContext())
+            {
+
+                var databaseCategory = ctx.MovieCaterogries.SingleOrDefault(x => x.Id == categoryId);
+                return databaseCategory;
+            }
+        }
     }
 }
