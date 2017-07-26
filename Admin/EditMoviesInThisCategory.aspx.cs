@@ -73,26 +73,20 @@ namespace MovieScrapper.Admin
 
         }
 
-        public string BuildUrl(string path)
+        public string BuildPosterUrl(string path)
         {
 
             return "http://image.tmdb.org/t/p/w92" + path;
         }
 
-        //public string BuildUrlWithId(string id)
-        //{
-        //    var categoryId = Request.QueryString["categoryId"];
-        //    if (categoryId != null)
-        //    {
-        //        string encodedBackUrl = Server.UrlEncode("MyMovies?name=" + TextBox1.Text + "&categoryId=" + categoryId);
-        //        return "MovieDetails.aspx?id=" + id + "&categoryId=" + categoryId + "&back=" + encodedBackUrl;
-        //    }
-        //    else
-        //    {
-        //        return "MovieDetails.aspx?id=" + id + "&back=MyMovies?name=" + Server.UrlEncode(TextBox1.Text);
-        //    }
-
-        //}
+        public string BuildUrlWithId(string id)
+        {
+            var categoryId = Request.QueryString["categoryId"];
+            
+                string encodedBackUrl = Server.UrlEncode("DBMovieDetails?id=" + id);
+                return "EditMoviesInThisCategory?categoryId=" +  categoryId + "&back=" + encodedBackUrl;
+                     
+        }
 
         public string BuildUrlWithName(string name)
         {
@@ -136,8 +130,13 @@ namespace MovieScrapper.Admin
             {
                 var id= e.CommandArgument.ToString();
                 
-                Response.Redirect("/CommonPages/DBMovieDetails.aspx?id=" + id.ToString());
+                Response.Redirect("/CommonPages/DBMovieDetails.aspx?id=" + id.ToString()+ "&back=/Admin/EditMoviesInThisCategory?categoryId="+ Request.QueryString["categoryId"]);
             }
+        }
+
+        protected void BackToEditCategoriesButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("GetCategory.aspx");
         }
     }
 }

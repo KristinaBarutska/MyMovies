@@ -40,13 +40,13 @@ namespace MovieScrapper.Admin {
         protected global::System.Web.UI.WebControls.TextBox EditCategoryDescriptionTextBox;
         
         /// <summary>
-        /// SaveChangesButton control.
+        /// BackButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SaveChangesButton;
+        protected global::System.Web.UI.WebControls.Button BackButton;
         
         /// <summary>
         /// DeleteCategoryButton control.
@@ -56,5 +56,14 @@ namespace MovieScrapper.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button DeleteCategoryButton;
+        
+        /// <summary>
+        /// SaveChangesButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SaveChangesButton;
     }
 }

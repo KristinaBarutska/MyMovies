@@ -4,14 +4,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link href="MovieDetail.css" rel="stylesheet" type="text/css" />
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            Test
+            
         </div>
-        <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px">
+        <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AutoGenerateRows="false" BorderStyle="None">
             <Fields>            
             <asp:TemplateField>
                 <ItemTemplate>
@@ -25,10 +26,11 @@
                             </div>
                             
                             <br></br>
+                        <a id="backlLink" runat="server" href="<%# BuildBackUrl() %>">Back to category page</a> </br>
                             
                         </br>
                     </div>
-                    <img id="poster" src="<%# Eval("PosterPath") %> "/>
+                    <img id="poster" src="<%# BuildPosterUrl((string)Eval("PosterPath")) %>"/>
                       <br />
                       <br />
                       <br />                      

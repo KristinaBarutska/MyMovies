@@ -18,9 +18,9 @@
     <form id="form1" runat="server">
         <div>
             <asp:Label ID="CategoryTitle" runat="server"></asp:Label>
+            <asp:Button ID="BackToEditCategoriesButton" runat="server" Text="Back to edit categories" OnClick="BackToEditCategoriesButton_Click" />
         </div>
-        <hr />
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        <hr />       
         <asp:DataList ID="DataList1" runat="server" RepeatColumns="4" RepeatDirection="Horizontal" BorderColor="Gray" BorderWidth="1px" CellSpacing="5" 
             OnItemCommand="DataList1_ItemCommand">
             <ItemTemplate>
@@ -38,9 +38,10 @@
                           CommandName="ShowDetails" CommandArgument='<%# Eval("Id") %>' CssClass="items" Height="30px" />
                         </div>                   
                   </div>  
-                    &nbsp;<img id="poster" src=<%# BuildUrl((string)Eval("PosterPath")) %> class="auto-style2" /></div>
+                    &nbsp;<img id="poster" src="<%# BuildPosterUrl((string)Eval("PosterPath")) %>" class="auto-style2" /></div>
             </ItemTemplate>
         </asp:DataList>
+        <hr />
         <asp:Button ID="AddMovieToThiscategoryButton" runat="server" OnClick="AddMovieToThisCategoryButton_Click" Text="Add movie to this category" Width="282px" />
 
         <br />
