@@ -115,5 +115,10 @@ namespace MovieScrapper.Secured
         {
 
         }
+
+        protected void BackToEditMoviesInThisCategoryButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Admin/EditMoviesInThisCategory.aspx?categoryId=" + Request.QueryString["categoryId"]);
+        }
     }
 }

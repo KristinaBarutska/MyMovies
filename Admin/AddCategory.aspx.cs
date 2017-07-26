@@ -11,34 +11,35 @@ namespace MovieScrapper.Admin
             
         }
 
-        protected void CategoryTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         protected void SubmitCategoryButton_Click(object sender, EventArgs e)
         {
-            AddCategory();
-                    
+            AddCategory();                 
         }
 
-        private void AddCategory()
+        public void AddCategory()
         {          
             var catrgoryTitle = CategoryTextBox.Text;
             var catrgoryDescription = DescriptionTextBox.Text;
-            using (var ctx = new MovieContext())
+            try
             {
-                MovieCategory category = new MovieCategory() { CategoryTtle = catrgoryTitle, CategoryDescription = catrgoryDescription };
-                
+                using (var ctx = new MovieContext())
+                {
+                    MovieCategory category = new MovieCategory() { CategoryTtle = catrgoryTitle, CategoryDescription = catrgoryDescription };
+
                     ctx.MovieCaterogries.Add(category);
                     ctx.SaveChanges();
-                    Label1.Text = category.CategoryTtle + " added";                               
 
+                }
+                Response.Redirect("GetCategory.aspx");
+            }
+            catch (Exception e)
+            {
+                Label1.Text = e.Message;
             }
 
         }
 
-        protected void BackToShowCategoriesButton_Click(object sender, EventArgs e)
+        protected void BackToGetCategoryButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("GetCategory.aspx");
         }

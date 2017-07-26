@@ -12,7 +12,10 @@ namespace MovieScrapper.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            using (var ctx = new MovieContext())
+            {
+                var test = ctx.MovieCaterogries.ToList();
+            }
         }
       
 

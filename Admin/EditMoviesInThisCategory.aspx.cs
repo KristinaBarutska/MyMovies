@@ -136,7 +136,7 @@ namespace MovieScrapper.Admin
 
         protected void BackToEditCategoriesButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("GetCategory.aspx");
+            Response.Redirect("GetCategory.aspx" );
         }
     }
 }

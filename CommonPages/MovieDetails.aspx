@@ -10,9 +10,7 @@
 <body>
     <form id="form1" runat="server">
         
-        <asp:DetailsView ID="DetailsView1" runat="server" Height="157px" 
-            OnPageIndexChanging="DetailsView1_PageIndexChanging" Width="279px"
-            AutoGenerateRows="false" BorderStyle="None" >
+        <asp:DetailsView ID="DetailsView1" runat="server" Height="157px"  Width="279px" AutoGenerateRows="false" BorderStyle="None" >
         <Fields>            
             <asp:TemplateField>
                 <ItemTemplate>
@@ -29,7 +27,7 @@
                             <a id="backlLink" runat="server" href="<%# BuildBackUrl() %>">Back to search page</a> </br>
                         </br>
                     </div>
-                    <img id="poster" src="<%# BuildUrl((string)Eval("PosterPath")) %> "/>
+                    <img id="poster" src="<%# BuildPosterUrl((string)Eval("PosterPath")) %> "/>
                       <br />
                       <br />
                       <br />                      
@@ -42,9 +40,9 @@
         <p>
             <asp:Button ID="AddMovieToCategoryButton" runat="server" Height="40px" Text="Add this movie to the selected category "  Width="527px" OnClick="AddMovieToCategoryButton_Click" />
         </p>
-        <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+        <%--<asp:Label ID="Label1" runat="server" Text=""></asp:Label>
         <br />
-        <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+        <asp:Label ID="Label2" runat="server" Text=""></asp:Label>--%>
     </form>
 </body>
 </html>

@@ -10,7 +10,8 @@
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             &nbsp;&nbsp;
             <asp:Button ID="SearchButton" runat="server" OnClick="Button1_Click" Text="Search" />   
-            &nbsp;<br />   
+            &nbsp;<asp:Button ID="BackToEditMoviesInThisCategoryButton" runat="server" Text="Back to Edit movies in this category" OnClick="BackToEditMoviesInThisCategoryButton_Click" />
+            <br />   
         </asp:Panel>
     </p>
     <p>

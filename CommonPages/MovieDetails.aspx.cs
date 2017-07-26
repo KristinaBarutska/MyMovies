@@ -42,7 +42,7 @@ namespace MovieScrapper
 
         }
 
-        protected string BuildUrl(string path)
+        protected string BuildPosterUrl(string path)
         {
             return "http://image.tmdb.org/t/p/w185" + path;
         }
@@ -68,11 +68,6 @@ namespace MovieScrapper
             }
         }
 
-        protected void DetailsView1_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
-        {
-
-        }
-
         protected void AddMovieToCategoryButton_Click(object sender, EventArgs e)
         {
             var movie = ViewState["Movie"] as Movie;
@@ -86,45 +81,23 @@ namespace MovieScrapper
                     var databaseMovie = ctx.Movies.Find(movie.Id);
                     var databaseCategory = ctx.MovieCaterogries.Include("Movies").SingleOrDefault(x => x.Id == categoryId);
                     var categoryTitle = databaseCategory.CategoryTtle;
-
-
                     var foundedMovie = databaseCategory.Movies.FirstOrDefault(x => x.Id == movieId);
 
-                    //var IsMovieFound = ctx.MovieCaterogries.Any(cat => cat.Id == categoryId && cat.Movies.Any(m => m.Id == movieId));
-
-
-                    //var foundedMovie = ctx.MovieCaterogries.SelectMany(c => c.Movies).ToList().Find(m => m.Id == movieId);
-                    //Insert movie in the local DB
-                    if (databaseMovie != null)
-                    {
-                        //databaseMovie = movie;
-                        //ctx.Entry(databaseMovie).State = System.Data.Entity.EntityState.Modified;
-                        //ctx.SaveChanges();
-                        Label1.Text = "This movie is already in the DB";
-                    }
-
-                    else
+                    if (databaseMovie == null)
                     {
                         databaseMovie = ctx.Movies.Add(movie);
                         ctx.SaveChanges();
-                        Label1.Text = "The movie " + movie.Title + " was added in the DB";
-
+                        //Label1.Text = "The movie " + movie.Title + " was added in the DB";
                     }
 
-                    if (foundedMovie!=null)
+                    if (foundedMovie == null)
                     {
-
-                       Label2.Text = "This movie is already in the category " + categoryTitle;
-                    }
-
-                    else
-                    {
-                        databaseCategory.Movies.Add(databaseMovie);
-                        //foundedMovie.MovieCategories.Add(databaseCategory);
-                        //ctx.Entry(databaseCategory).State = System.Data.Entity.EntityState.Modified;
+                        databaseCategory.Movies.Add(databaseMovie);                       
                         ctx.SaveChanges();
-                        Label2.Text = "The movie " + movie.Title + " was added in category " + categoryTitle;
+                        //Label2.Text = "The movie " + movie.Title + " was added in category " + categoryTitle;
                     }
+
+                    Response.Redirect("/Admin/EditMoviesInThisCategory?categoryId=" + categoryId);
 
                 }
             }          

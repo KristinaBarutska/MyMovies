@@ -4,7 +4,7 @@ namespace MovieScrapper.Models
 {
     public class MovieContext: DbContext
     {
-        public MovieContext(): base()
+        public MovieContext(): base("DefaultConnection")
         {
 
         }
