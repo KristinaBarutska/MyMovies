@@ -1,21 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditMoviesInThisCategory.aspx.cs" Inherits="MovieScrapper.Admin.EditMoviesInThisCategory" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditMoviesInThisCategory.aspx.cs" Inherits="MovieScrapper.Admin.EditMoviesInThisCategory" MasterPageFile="~/Site.Master"%>
+<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <script src="../Scripts/WebForms/UserDeleteConfirmation.js"></script>
-    <title></title>
     <link href="../CommonPages/MovieStyleSheet.css" rel="stylesheet" type="text/css" />
-    <style type="text/css">
+    <%--<style type="text/css">
         .auto-style2 {
             width: 73%;
             height: 103px;
         }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
+    </style>--%>
+
         <div>
             <asp:Label ID="CategoryTitle" runat="server"></asp:Label>
             <asp:Button ID="BackToEditCategoriesButton" runat="server" Text="Back to edit categories" OnClick="BackToEditCategoriesButton_Click" />
@@ -31,7 +24,7 @@
                       </div>
                       <div class="items">
                       <asp:Button ID="DeleteButton" runat="server" CssClass="items" Height="30px" Text="Delete" Width="100px" 
-                          CommandName="Delete" CommandArgument='<%# Eval("Id") %>'  OnClientClick="if ( ! UserDeleteConfirmation()) return false;"/>
+                          CommandName="Delete" CommandArgument='<%# Eval("Id") %>'  OnClientClick="return confirm('Are you sure you want to delete this item?')"/>
                      </div>
                       <div class="items">
                       <asp:Button ID="ShowDetailsButton" runat="server" Text="Show details" Width="100px" 
@@ -45,8 +38,4 @@
         <asp:Button ID="AddMovieToThiscategoryButton" runat="server" OnClick="AddMovieToThisCategoryButton_Click" Text="Add movie to this category" Width="282px" />
 
         <br />
-        <br />
-
-    </form>
-</body>
-</html>
+</asp:Content>

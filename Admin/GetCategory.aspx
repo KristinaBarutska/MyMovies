@@ -1,13 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GetCategory.aspx.cs" Inherits="MovieScrapper.Admin.GetCategory" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GetCategory.aspx.cs" Inherits="MovieScrapper.Admin.GetCategory" MasterPageFile="~/Site.Master" %>
+<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
         <div>
             <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal"
                 OnItemCommand="DataList1_ItemCommand">
@@ -38,6 +30,4 @@
         </div>
         <hr />
         <asp:Button ID="AddCategoryButton" runat="server" OnClick="AddCategoryButton_Click" Text="Add new category" Width="240px" />
-    </form>
-</body>
-</html>
+</asp:Content>

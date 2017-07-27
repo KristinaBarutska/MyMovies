@@ -71,11 +71,13 @@ namespace MovieScrapper
         {
             if (HttpContext.Current.User.IsInRole("admin"))
             {
-                Admin.Visible = true;
+                Admin1.Visible = true;
+                Admin2.Visible = true;
             }
             else
             {
-                Admin.Visible = false;
+                Admin1.Visible = false;
+                Admin2.Visible = false;
             }
         }
 

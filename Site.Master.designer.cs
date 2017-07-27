@@ -13,13 +13,22 @@ namespace MovieScrapper {
     public partial class SiteMaster {
         
         /// <summary>
-        /// Admin control.
+        /// Admin1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor Admin;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor Admin1;
+        
+        /// <summary>
+        /// Admin2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor Admin2;
         
         /// <summary>
         /// MainContent control.

@@ -12,7 +12,7 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <link href="SiteMaster.css" rel="stylesheet" type="text/css" />
 
@@ -54,7 +54,10 @@
                         
                         <li><a runat="server" href="~/CommonPages/ShowMovies">Home</a></li>
                         <li><a runat="server" href="~/CommonPages/ShowCategories">Categories</a></li>
-                        <li><a runat="server" id="Admin" href="~/Admin/GetCategory">Admin</a></li>
+                        
+                        <li><a runat="server" id="Admin1" href="~/Admin/GetCategory">Edit movies</a></li>
+                        <li><a runat="server" id="Admin2" href="~/Admin/Users">Edit users</a></li>
+                        
                     
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">

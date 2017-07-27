@@ -1,14 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Users.aspx.cs" Inherits="MovieScrapper.Admin.Users" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Users.aspx.cs" Inherits="MovieScrapper.Admin.Users" MasterPageFile="~/Site.Master"%>
+<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
         <div>
+            <br />
             <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="Horizontal" Height="349px" Width="872px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px">
                 <Columns>
                     <asp:CommandField ShowSelectButton="True" />
@@ -87,6 +80,4 @@
                 </UpdateParameters>
             </asp:SqlDataSource>
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>
