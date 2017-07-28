@@ -2,20 +2,19 @@
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
 
     <link href="../CommonPages/MovieStyleSheet.css" rel="stylesheet" type="text/css" />
-    <%--<style type="text/css">
-        .auto-style2 {
-            width: 73%;
-            height: 103px;
-        }
-    </style>--%>
-
+    <br />
+    <hr />
+ 
         <div>
-            <asp:Label ID="CategoryTitle" runat="server"></asp:Label>
-            <asp:Button ID="BackToEditCategoriesButton" runat="server" Text="Back to edit categories" OnClick="BackToEditCategoriesButton_Click" />
+            <asp:Label ID="CategoryTitle" runat="server" style="text-transform: uppercase;"></asp:Label>           
         </div>
         <hr />       
-        <asp:DataList ID="DataList1" runat="server" RepeatColumns="4" RepeatDirection="Horizontal" BorderColor="Gray" BorderWidth="1px" CellSpacing="5" 
-            OnItemCommand="DataList1_ItemCommand">
+        <asp:DataList ID="DataList1" runat="server" RepeatColumns="5" RepeatDirection="Horizontal" 
+            OnItemCommand="DataList1_ItemCommand" CellPadding="4" ForeColor="#333333">
+            <AlternatingItemStyle BackColor="White" />
+            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <ItemStyle BackColor="#EFF3FB" />
             <ItemTemplate>
                 <div id="movieItem">  
                   <div id="title">
@@ -33,9 +32,12 @@
                   </div>  
                     &nbsp;<img id="poster" src="<%# BuildPosterUrl((string)Eval("PosterPath")) %>" class="auto-style2" /></div>
             </ItemTemplate>
+            <SelectedItemStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
         </asp:DataList>
         <hr />
-        <asp:Button ID="AddMovieToThiscategoryButton" runat="server" OnClick="AddMovieToThisCategoryButton_Click" Text="Add movie to this category" Width="282px" />
+    <asp:Button ID="BackToEditCategoriesButton" runat="server" Text="&#231;" OnClick="BackToEditCategoriesButton_Click" style="font-family:Wingdings" />
+     &nbsp;
+    <asp:Button ID="AddMovieToThiscategoryButton" runat="server" OnClick="AddMovieToThisCategoryButton_Click" Text="Add movie to this category" Width="282px" />
 
         <br />
 </asp:Content>

@@ -7,10 +7,12 @@
     <p>&nbsp;</p>
     <p>
         <asp:Panel runat="server" DefaultButton="SearchButton">
+            <asp:Button ID="BackToEditMoviesInThisCategoryButton" runat="server" Text="&#231;" OnClick="BackToEditMoviesInThisCategoryButton_Click" style="font-family:Wingdings; background-color: none" />
+            &nbsp;
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-            &nbsp;&nbsp;
+            &nbsp;
             <asp:Button ID="SearchButton" runat="server" OnClick="Button1_Click" Text="Search" />   
-            &nbsp;<asp:Button ID="BackToEditMoviesInThisCategoryButton" runat="server" Text="Back to Edit movies in this category" OnClick="BackToEditMoviesInThisCategoryButton_Click" />
+            &nbsp;
             <br />   
         </asp:Panel>
     </p>

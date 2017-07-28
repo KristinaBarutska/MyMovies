@@ -9,21 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:DataList ID="DataList1" runat="server" DataKeyField="Id" DataSourceID="SqlDataSource1">
-                <ItemTemplate>
-                    
-                    <asp:Label ID="CategoryTtleLabel" runat="server" Text='<%# Eval("CategoryTtle") %>' />
-                    <br />
-                    
-                    <asp:Label ID="CategoryDescriptionLabel" runat="server" Text='<%# Eval("CategoryDescription") %>' />
-                    <br />
-                    Id:
-                    <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
-                    <br />
-<br />
-                </ItemTemplate>
-            </asp:DataList>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT DISTINCT [CategoryTtle], [CategoryDescription], [Id] FROM [MovieCategories]"></asp:SqlDataSource>
+            
+            
         </div>
     </form>
 </body>

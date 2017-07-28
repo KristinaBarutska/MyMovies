@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
         
-        <asp:DetailsView ID="DetailsView1" runat="server" Height="157px"  Width="279px" AutoGenerateRows="false" BorderStyle="None" >
+        <asp:DetailsView ID="DetailsView1" runat="server" Height="157px"  Width="279px" AutoGenerateRows="false" BorderStyle="None" GridLines="None" >
         <Fields>            
             <asp:TemplateField>
                 <ItemTemplate>
@@ -24,7 +24,7 @@
                             </div>
                             
                             <br></br>
-                            <a id="backlLink" runat="server" href="<%# BuildBackUrl() %>">Back to search page</a> </br>
+                            <a id="backlLink" runat="server" href="<%# BuildBackUrl() %>"><span style="font-family:Wingdings">&#231;</span></a> </br>
                         </br>
                     </div>
                     <img id="poster" src="<%# BuildPosterUrl((string)Eval("PosterPath")) %> "/>

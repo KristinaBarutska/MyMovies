@@ -2,11 +2,17 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddCategory.aspx.cs" Inherits="MovieScrapper.Admin.Category" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
+    <br />
+    <hr />
         <div>
-            &nbsp;
-            Category title:<br />
+            Title:
+            <br />
             <asp:TextBox ID="CategoryTextBox" runat="server"  Width="400px"></asp:TextBox>
-            &nbsp;
+            <asp:RequiredFieldValidator id="RequiredFieldValidator1" runat="server"
+                ControlToValidate="CategoryTextBox"
+                ErrorMessage="Category title is a required field."
+                ForeColor="Red">
+</asp:RequiredFieldValidator>
             <br />
             Description:
         </div>
