@@ -16,5 +16,25 @@ namespace MovieScrapper.CommonPages
                 
             }
         }
+
+        public string BuildPosterUrl(string path)
+        {
+            return "http://image.tmdb.org/t/p/w92" + path;
+        }
+
+        public string DisplayYear(string dateString)
+        {
+            DateTime res;
+
+            if (DateTime.TryParse(dateString, out res))
+            {
+                return res.Year.ToString();
+            }
+            else
+            {
+                return dateString;
+            }
+
+        }
     }
 }
