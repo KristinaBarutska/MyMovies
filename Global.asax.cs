@@ -5,6 +5,7 @@ using System.Web.Routing;
 using System.Web.Http;
 using System.Data.Entity;
 using MovieScrapper.Models;
+using MovieScrapper.Data;
 
 namespace MovieScrapper
 {

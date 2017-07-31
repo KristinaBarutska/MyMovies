@@ -1,4 +1,6 @@
-﻿using MovieScrapper.Models;
+﻿using MovieScrapper.Data;
+using MovieScrapper.Entities;
+using MovieScrapper.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,3 +1,4 @@
+C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\obj\Debug\MovieScrapper.Web.csprojResolveAssemblyReference.cache
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\ApplicationInsights.config
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\roslyn\csc.exe
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\roslyn\csc.exe.config
@@ -58,6 +59,9 @@ C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScr
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\Microsoft.ScriptManager.MSAjax.dll
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\Microsoft.ScriptManager.WebForms.dll
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\MovieScrapper.Business.dll
+C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\MovieScrapper.Data.dll
+C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\MovieScrapper.Entities.dll
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\Newtonsoft.Json.dll
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\Owin.dll
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\System.Net.Http.Formatting.dll
@@ -66,15 +70,19 @@ C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScr
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\System.Web.Optimization.dll
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\System.Web.Providers.dll
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\WebGrease.dll
+C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\MovieScrapper.Business.pdb
+C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\MovieScrapper.Data.pdb
+C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\MovieScrapper.Data.dll.config
+C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\MovieScrapper.Entities.pdb
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\Newtonsoft.Json.xml
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\System.Net.Http.Formatting.xml
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\System.Web.Http.xml
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\System.Web.Http.WebHost.xml
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\System.Web.Optimization.xml
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\Antlr3.Runtime.pdb
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\Microsoft.AspNet.FriendlyUrls.xml
-C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\Newtonsoft.Json.xml
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\EntityFramework.xml
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\EntityFramework.SqlServer.xml
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\Microsoft.AspNet.Identity.Core.xml
@@ -94,6 +102,5 @@ C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScr
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\bin\Microsoft.AI.Web.xml
-C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\obj\Debug\MovieScrapper.Web.csprojResolveAssemblyReference.cache
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\obj\Debug\MovieScrapper.dll
 C:\Users\k.barutska\documents\visual studio 2017\Projects\MovieScrapper\MovieScrapper\obj\Debug\MovieScrapper.pdb
