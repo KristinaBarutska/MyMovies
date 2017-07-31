@@ -30,7 +30,7 @@ namespace MovieScrapper.Admin
                     ctx.SaveChanges();
 
                 }
-                Response.Redirect("GetCategory.aspx");
+                Response.Redirect("Categories.aspx");
             }
             catch (Exception e)
             {
@@ -39,9 +39,9 @@ namespace MovieScrapper.Admin
 
         }
 
-        protected void BackToGetCategoryButton_Click(object sender, EventArgs e)
+        protected void BackToCategoriesButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("GetCategory.aspx");
+            Response.Redirect("Categories.aspx");
         }
     }
 }

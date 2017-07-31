@@ -56,7 +56,7 @@
                         <li><a runat="server" href="~/CommonPages/ShowMovies">Home</a></li>
                         <li><a runat="server" href="~/CommonPages/ShowCategories">Categories</a></li>
                         
-                        <li><a runat="server" id="Admin1" href="~/Admin/GetCategory">Edit movies</a></li>
+                        <li><a runat="server" id="Admin1" href="~/Admin/Categories">Edit movies</a></li>
                         <li><a runat="server" id="Admin2" href="~/Admin/Users">Edit users</a></li>
                         
                     

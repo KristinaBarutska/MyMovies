@@ -37,7 +37,7 @@ namespace MovieScrapper.Admin
                 ctx.Entry(category).State = System.Data.Entity.EntityState.Modified;               
                 ctx.SaveChanges();
             }
-            Response.Redirect("GetCategory.aspx");
+            Response.Redirect("Categories.aspx");
         }
 
         protected void DeleteCategoryButton_Click(object sender, EventArgs e)
@@ -50,12 +50,12 @@ namespace MovieScrapper.Admin
                 ctx.Entry(category).State = System.Data.Entity.EntityState.Deleted;
                 ctx.SaveChanges();
             }
-            Response.Redirect("GetCategory.aspx");
+            Response.Redirect("Categories.aspx");
         }
 
         protected void BackButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("GetCategory.aspx");
+            Response.Redirect("Categories.aspx");
         }
     }
 }

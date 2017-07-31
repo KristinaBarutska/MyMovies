@@ -21,7 +21,7 @@
         </p>
         <asp:Button ID="SubmitCategoryButton" runat="server" OnClick="SubmitCategoryButton_Click" Text="Submit" Height="25px" Width="103px" />
         &nbsp;
-        <asp:Button ID="BackToGetCategoryButton" runat="server" OnClick="BackToGetCategoryButton_Click" Text="Cancel" Width="100px" Height="25px" />
+        <asp:Button ID="BackToCategoriesButton" runat="server" OnClick="BackToCategoriesButton_Click" Text="Cancel" Width="100px" Height="25px" />
         <p>
             <asp:Label ID="Label1" runat="server"></asp:Label>
         </p>

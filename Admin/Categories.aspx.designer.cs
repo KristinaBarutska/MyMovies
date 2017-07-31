@@ -10,7 +10,7 @@
 namespace MovieScrapper.Admin {
     
     
-    public partial class GetCategory {
+    public partial class Categories {
         
         /// <summary>
         /// DataList1 control.

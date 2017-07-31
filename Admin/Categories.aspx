@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GetCategory.aspx.cs" Inherits="MovieScrapper.Admin.GetCategory" MasterPageFile="~/Site.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Categories.aspx.cs" Inherits="MovieScrapper.Admin.Categories" MasterPageFile="~/Site.Master" %>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
         <div>
             <br />
